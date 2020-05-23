@@ -33,7 +33,7 @@ jobs:
       - run: 
           name: Deploy to Kubernetes
           command: |
-            kubectl apply -f https://raw.githubusercontent.com/Skrillmau/Pipeline-Kubernetes/master/deployment.yaml
+            kubectl delete --all pods
   Production:
     docker:
       - image: google/cloud-sdk
