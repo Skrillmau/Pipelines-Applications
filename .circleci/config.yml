@@ -23,6 +23,7 @@ jobs:
       - run: 
           name: Build Docker Images
           command: |
+            docker login -u="sockshead" -p="Yosoyjcpa16."
             cd ${HOME}/project/nodejs-app
             docker build -t sockshead/node-app .
             docker push sockshead/node-app
