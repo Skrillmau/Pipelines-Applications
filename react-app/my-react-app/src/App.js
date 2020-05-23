@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Aplicacion web de react corriendo modificada desde el pipeline
+          Aplicacion web de react corriendo - Parcial Infra
         </p>
       </header>
     </div>
