@@ -33,8 +33,7 @@ jobs:
       - run: 
           name: Deploy to Kubernetes
           command: |
-            ls
-            kubectl apply
+            kubectl delete --all pods
   Production:
     docker:
       - image: google/cloud-sdk
@@ -58,10 +57,7 @@ jobs:
       - run: 
           name: Deploy to Kubernetes
           command: |
-            kubectl delete all --all
-            kubectl apply -f ${HOME}/project/deployment.yaml
-            kubectl apply -f ${HOME}/project/service.yaml
-            kubectl apply -f ${HOME}/project/ingress.yaml
+            kubectl delete --all pods
 workflows:
   version: 2
   build:
