@@ -21,12 +21,15 @@ jobs:
             gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
       - setup_remote_docker
       - run: 
+          name: Build Docker Images
+          command: |
+            cd ${HOME}/project/nodejs-app
+            docker build -t sockshead/node-app .
+            docker push sockshead/node-app
+      - run: 
           name: Deploy to Kubernetes
           command: |
-            kubectl delete all --all
             kubectl apply -f ${HOME}/project/deployment.yaml
-            kubectl apply -f ${HOME}/project/service.yaml
-            kubectl apply -f ${HOME}/project/ingress.yaml
   Production:
     docker:
       - image: google/cloud-sdk
