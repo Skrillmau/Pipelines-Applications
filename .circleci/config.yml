@@ -27,6 +27,9 @@ jobs:
             cd ${HOME}/project/nodejs-app
             docker build -t sockshead/node-app .
             docker push sockshead/node-app
+            cd ../react-app/my-react-app
+            docker build -t sockshead/react-app .
+            docker push sockshead/react-app
       - run: 
           name: Deploy to Kubernetes
           command: |
