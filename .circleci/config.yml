@@ -33,7 +33,7 @@ jobs:
       - run: 
           name: Deploy to Kubernetes
           command: |
-            kubectl apply -f ${HOME}/project/deployment.yaml
+            kubectl apply
   Production:
     docker:
       - image: google/cloud-sdk
